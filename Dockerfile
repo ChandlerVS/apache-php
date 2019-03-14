@@ -17,6 +17,8 @@ RUN apt -y install git unzip curl && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     rm -rf /var/lib/apt/lists/*
 
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
 EXPOSE 80 443
 
 CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
