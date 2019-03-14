@@ -12,7 +12,7 @@ RUN apt update && \
     php-sqlite3 php-redis php-imagick && \
     a2enmod ssl && a2enmod rewrite
 
-RUN apt -y install git unzip curl && \
+RUN apt -y install git unzip curl php-curl && \
     curl -sS https://getcomposer.org/installer -o composer-setup.php && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     rm -rf /var/lib/apt/lists/*
